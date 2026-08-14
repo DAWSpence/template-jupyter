@@ -3,9 +3,10 @@ services:
   jupyter:
     build: 
       context: .
-      dockerfile: ./docker/jupyter/Dockerfile
+      dockerfile: ./setup/Dockerfile
+
     volumes:
-      - ./work:/home/jovyan/work
+      - ./mount:/home/jovyan/mount
     ports:
       - 8888:8888
     command: "start-notebook.sh --NotebookApp.token="
